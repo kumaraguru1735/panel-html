@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streaming Service UI</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #1a1a1a;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.status-bar {
+  background: #333;
+  padding: 20px 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.stream-box {
+  background: #222;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 300px;
+  text-align: center;
+}
+
+.stream-status {
+  margin-bottom: 20px;
+
+}
+
+.stream-info {
+  margin-bottom: 20px;
+}
+
+.stream-info p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.stream-info img {
+  width: 24px;
+  height: auto;
+}
+
+.enable-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+</style>
+<body>
+
+<div class="container">
+
+    <div class="stream-box">
+        <div class="stream-status">
+          <video src="http://ipcloud.live:8080/onetv/onemovies.m3u8" controls></video>
+        </div>
+        <div class="stream-info">
+            <p>onelive</p>
+            <div class="status-bar">
+              <p>Offline</p>
+          </div>
+        </div>
+        <button class="enable-button">Enable</button>
+    </div>
+</div>
+
+</body>
+</html>

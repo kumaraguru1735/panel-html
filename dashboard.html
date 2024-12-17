@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var toggleButton = document.getElementById('sidebarToggle');
+            sidebar.classList.toggle('active');
+            // Check if the sidebar is active and change the icon accordingly
+            if (sidebar.classList.contains('active')) {
+              toggleButton.innerHTML = '<i class="fas fa-times"></i>'; // Change to 'X' icon
+              toggleButton.classList.add('close');
+            } else {
+              toggleButton.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to bars icon
+              toggleButton.classList.remove('close');
+            }
+          }
+    </script>
+    <div class="sidebar-toggle">
+        <button onclick="toggleSidebar()" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+      </div>
+<div class="sidebar">
+    
+  <div class="logo-container">
+    <img src="https://castr.com/wp-content/uploads/2023/12/Christmas_logo_2023.png" alt="Company Logo" class="logo">
+  </div>
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="livestreams.html" class="active"><i class="fas fa-satellite-dish"></i> Livestreams</a></li>
+      <li><a href="#transcoder"><i class="fas fa-cogs"></i> Transcoder</a></li>
+      <!-- Add other menu items with icons here -->
+      <li><a href="#settings"><i class="fas fa-sliders-h"></i> Settings</a></li>
+      <li><a href="#billing"><i class="fas fa-credit-card"></i> Billing</a></li>
+    </ul>
+  </nav>
+  <div class="nav-footer">
+    <ul>
+      <li><a href="#help"><i class="fas fa-question-circle"></i> Help</a></li>
+      <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top App Bar</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style>
+  .top-app-bar {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 280px;
+    margin-right: 30px;
+    margin-top:10px;
+    border-radius: 0.375rem;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    background-color: #34495e;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+
+  .search-box input {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .notification-icon {
+    position: relative;
+    font-size: 24px;
+    color: #ffffff;
+  }
+
+  .notification-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff3b30;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border: 2px solid #2c3e50; /* Match the background color */
+  }
+</style>
+</head>
+<body>
+
+<div class="top-app-bar">
+  <div class="search-box">
+    <i class="search-icon">🔍</i>
+    <input type="text" placeholder="Search (Ctrl+/)" />
+  </div>
+  <div class="icons">
+    <i class="fas fa-flag-usa icon"></i>
+    <i class="fas fa-cog icon"></i>
+    <i class="fas fa-th icon"></i>
+    <div class="icon notification-icon">
+        <i class="fas fa-bell"></i>
+        <span class="notification-count">5</span>
+      </div>
+    <i class="fas fa-user icon"></i>
+  </div>
+</div>
+
+</body>
+</html>

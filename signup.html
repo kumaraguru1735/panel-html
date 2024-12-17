@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Page</title>
+<link rel="stylesheet" href="signup.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <script>
+        function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var togglePasswordIcon = document.querySelector('.toggle-password');
+        var isPasswordVisible = passwordInput.type === 'password';
+        passwordInput.type = isPasswordVisible ? 'text' : 'password';
+        togglePasswordIcon.classList.toggle('fa-eye');
+        togglePasswordIcon.classList.toggle('fa-eye-slash');
+        }
+    </script>
+<div class="signup-container">
+    <div class="signup-box">
+        <div class="logo-container">
+            <img src="https://castr.com/wp-content/uploads/2023/12/Christmas_logo_2023.png" alt="Company Logo" class="logo"> 
+        </div>
+        <h2>Register</h2>
+        <form class="signup-form">
+            <div class="input-group">
+                <label for="username">username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group password">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <i class="toggle-password fa fa-eye-slash" onclick="togglePasswordVisibility()"></i>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="phonenumber">PhoneNumber</label>
+                <input type="number" id="phonenumber" required>
+            </div>
+            <br>
+            <button type="submit">Register</button>
+        </form>
+        <div class="signup-link">
+            Already have an account? <a href="login.html">Sign in</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

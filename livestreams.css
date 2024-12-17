@@ -1,0 +1,184 @@
+.create-new-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  padding: 16px; /* Add padding as per your layout */
+  right: inherit; /* Remove the default right margin */
+  margin-right: 150px; /* Add a right margin to push the button away from the edge of the screen */
+  margin-bottom: 20px; /* Add a bottom margin to push the button away from the edge of the screen */
+}
+.create-new-button {
+  background-color: #007bff; /* The blue background color */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex; /* To align the icon and text */
+  align-items: center;
+  margin-top: 25px;
+}
+
+.create-new-button i {
+  margin-right: 8px; /* Space between the icon and the text */
+}
+
+.create-new-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(400px, 1fr)); /* Fixed 3 columns */
+  grid-template-rows: repeat(3, 300px); /* Creates 3 rows, each 300px high */
+  gap: 10px; /* Optional: adds space between grid items */
+  margin-left: 300px; /* Adjust as needed */
+  padding: 20px; /* Adjust as needed */
+}
+
+.card {
+  background-color: #232d4d;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 30px;
+  /* height: 100%; */
+  width: 100%;
+  border-radius: 8px 8px 8px 8px;
+  position: relative;
+}
+
+.badge-status {
+  height: 24px;
+  min-width: 22px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  font-weight: 500;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.badge-dark-3 {
+  color: #aebad6;
+  background-color: #343e61;
+}
+
+.thumb {
+  height: 212px;
+  background-color: #000;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.thumb__message {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  color: #4f5c87;
+  top: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.disabled__msg {
+  font-size: 18px;
+  font-weight: 500;
+  color: #8794b5;
+  text-align: center;
+  margin-bottom: 0.25rem;
+};
+
+.enable_msg{
+  font-size: 15px;
+  color: #4f5c87;
+  font-weight: 400;
+}
+
+.video-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.video-grid {
+  width: 100%;
+  height: 80%;
+  border-radius: 8px 8px 8px 8px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0px 0px;
+  object-fit: cover;
+}
+
+.status-grid {
+  width: 100%;
+  height: 30%;
+  background-color: rgb(9, 56, 109);
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Small devices */
+@media screen and (min-width: 10em) {
+  .container-grid {
+    /* background-color: rgb(90, 177, 106); */
+  }
+}
+
+/* Small devices such as large phones (640px and up) */
+@media screen and (min-width: 40em) {
+  .container-grid {
+    /* background-color: rgb(255, 0, 0); */
+  }
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media screen and (min-width: 48em) {
+  .container-grid {
+    /* background-color: rgb(255, 241, 91); */
+  }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media screen and (min-width: 64em) {
+  .container-grid {
+    /* background-color: rgb(0, 255, 8); */
+  }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media screen and (min-width: 80em) {
+  .container-grid {
+    /* background-color: rgb(247, 0, 255); */
+  }
+}

@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 429px;
+    margin: auto;
+    padding: 16px;
+  }
+  
+  .stream-box, .setup-box, .playback-box {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .stream-box h2, .setup-box h3, .playback-box h3 {
+    color: #fff;
+    margin: 0 0 8px 0;
+  }
+  
+  button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .stream-setup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .stream-setup-buttons button {
+    width: calc(33% - 8px);
+  }
+  
+  .stream-setup-info, .streaming-key {
+    background-color: #333;
+    padding: 8px;
+    margin: 8px 0;
+    color: #fff;
+  }
+  
+  .stream-setup-info input, .streaming-key input {
+    width: calc(100% - 16px);
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  
+  /* Additional
+  

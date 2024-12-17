@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stream Configuration</title>
+<link rel="stylesheet" href="stats.css">
+</head>
+<body>
+  <div class="container">
+    <div class="stream-box">
+      <div class="stream-status">
+        <h2>Disabled Stream</h2>
+        <button>Enable Stream</button>
+      </div>
+    </div>
+
+    <div class="setup-box">
+      <div class="stream-setup-header">
+        <h3>Stream Source Setup</h3>
+        <div class="country-flag">
+          <img src="india-flag.png" alt="India"> <!-- Replace with actual image path -->
+        </div>
+      </div>
+      <div class="stream-setup-buttons">
+        <button>Publish</button>
+        <button>Pull</button>
+        <button>Webcam</button>
+      </div>
+      <div class="stream-setup-info">
+        <label for="rtmp">RTMP</label>
+        <input type="text" id="rtmp" value="rtmp://in.castr.io/static" readonly>
+      </div>
+      <div class="streaming-key">
+        <label for="streaming-key">Streaming Key</label>
+        <input type="text" id="streaming-key" value="xxxxxxxxxxxxxxxx" readonly>
+      </div>
+    </div>
+
+    <div class="playback-box">
+      <h3>Playback</h3>
+      <p>Get your own embeddable player. You can do so much more with your content, let us show you or upgrade to access instantly.</p>
+      <button>Show me</button>
+      <button>Upgrade</button>
+    </div>
+  </div>
+</body>
+</html>

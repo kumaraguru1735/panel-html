@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <script>
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('password');
+      var togglePasswordIcon = document.querySelector('.toggle-password');
+      var isPasswordVisible = passwordInput.type === 'password';
+      passwordInput.type = isPasswordVisible ? 'text' : 'password';
+      togglePasswordIcon.classList.toggle('fa-eye');
+      togglePasswordIcon.classList.toggle('fa-eye-slash');
+    }
+  </script>
+<div class="login-container">
+    <div class="login-box">
+        <div class="logo-container">
+            <img src="https://castr.com/wp-content/uploads/2023/12/Christmas_logo_2023.png" alt="Company Logo" class="logo"> <!-- Replace with your logo -->
+        </div>
+        <h2>Login</h2>
+        <form class="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group password">
+              <label for="password">Password</label>
+              <input type="password" id="password" required>
+              <i class="toggle-password fa fa-eye-slash" onclick="togglePasswordVisibility()"></i>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

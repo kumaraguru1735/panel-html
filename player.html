@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flv.js@latest"></script>
+</head>
+<body>
+    <!-- HLS Video Player -->
+    <video id="hls_video" class="video" autoplay muted playsinline controls></video>
+    <!-- FLV Video Player -->
+    <video id="flv_video" class="video" autoplay muted playsinline controls></video>
+
+    <script>
+        // HLS Video Initialization
+        var hlsVideo = document.getElementById('hls_video');
+        if(Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource('http://ipcloud.live:8080/onetv/onemovies.m3u8');
+            hls.attachMedia(hlsVideo);
+        } else if (hlsVideo.canPlayType('application/vnd.apple.mpegurl')) {
+            hlsVideo.src = 'http://ipcloud.live:8080/onetv/onemovies.m3u8';
+        }
+
+        // FLV Video Initialization
+        var flvVideo = document.getElementById('flv_video');
+        if (flvjs.isSupported()) {
+            var flvPlayer = flvjs.createPlayer({
+                type: 'flv',
+                url: 'http://ipcloud.live:8080/onetv/onemovies.flv'
+            });
+            flvPlayer.attachMediaElement(flvVideo);
+            flvPlayer.load();
+        }
+    </script>
+</body>
+</html>

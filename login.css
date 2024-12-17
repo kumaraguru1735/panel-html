@@ -1,0 +1,110 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #232d4d; /* Adjust the color to match the design */
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.login-box {
+  background: #343e61;
+  padding: 20px;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  color: #fff;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 75px; /* Adjust as necessary */
+  height: auto;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid #68759c;
+  border: #007bff;
+  border-radius: 5px;
+  background-color: #68759c;
+  color: #fff;
+}
+.input-group input:focus {
+  border-color: #007bff; /* Set to your desired focus color */
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Style for the eye icon */
+.toggle-password {
+  position: absolute;
+  right: 10px; /* Space from the right border */
+  top: 70%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically with respect to the input height */
+  cursor: pointer;
+  color: #A7B1C9;
+  font-size: 20px; /* Optional: Adjust the icon size as needed */
+}
+

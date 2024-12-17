@@ -1,0 +1,88 @@
+/* Existing styles... */
+
+
+/* Side bar */
+
+
+
+.offcanvas {
+  /* Other existing styles... */
+  background-color: #2C2C54; /* Dark background for sidebar */
+  color: #FFF; /* Light text color for readability */
+  z-index: 1000; /* Ensure it's on top of other content */
+  height: 100%; /* Make it cover the whole screen */
+  background: #2C2C54;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%; /* Start off to the right of the viewport */
+  width: 300px; /* Width of the offcanvas menu */
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, .2);
+  transition: right 0.3s ease;
+}
+
+.offcanvas-header {
+    background-color: #007bff; /* Blue background color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Adjust padding as needed */
+} 
+
+.offcanvas-title {
+  margin: 0;
+  color: #fff;
+}
+
+.offcanvas-close {
+  background: none;
+  border: none;
+  color: red; /* Set the color to red */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.offcanvas-body {
+  padding: 1rem;
+  background-color: #1F1F38;
+  height: 100%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.form-group input {
+  width: 93%;
+  padding: .5rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #343e61;;
+  color: #FFF;
+}
+
+.form-group input::placeholder {
+  color: #555;
+}
+
+.submit-btn {
+  padding: .5rem 1rem;
+  background-color: #007bff; /* Green background for submit button */
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%; /* Full-width button */
+}
+
+.submit-btn:hover {
+  background-color: #007bff; /* Darker green on hover */
+}
+
+/* More styles... */

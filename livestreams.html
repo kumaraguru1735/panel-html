@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream</title>
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="livestreams.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.querySelector('.sidebar');
+      var toggleButton = document.getElementById('sidebarToggle');
+      sidebar.classList.toggle('active');
+      // Check if the sidebar is active and change the icon accordingly
+      if (sidebar.classList.contains('active')) {
+        toggleButton.innerHTML = '<i class="fas fa-times"></i>'; // Change to 'X' icon
+        toggleButton.classList.add('close');
+      } else {
+        toggleButton.innerHTML = '<i class="fas fa-bars"></i>'; // Change back to bars icon
+        toggleButton.classList.remove('close');
+      }
+    }
+    function openOffcanvas() {
+      document.getElementById("offcanvasAddStream").style.right = "0";
+    }
+
+    function closeOffcanvas() {
+      document.getElementById("offcanvasAddStream").style.right = "-100%";
+    }
+
+    document.getElementById('streamKeyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Your code to handle the form submission, e.g., using AJAX
+      console.log('Form submitted!');
+
+      // Then close the offcanvas
+      closeOffcanvas();
+    });
+
+
+    // Get all dropdown buttons
+    var dropdown = document.getElementsByClassName("dropbtn");
+    var i;
+
+    // Add click event to each button
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function () {
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+      });
+    }
+
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Initialize tooltips
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  <div class="sidebar-toggle">
+    <button onclick="toggleSidebar()" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+  </div>
+  <div class="sidebar">
+
+    <div class="logo-container">
+      <img src="https://castr.com/wp-content/uploads/2023/12/Christmas_logo_2023.png" alt="Company Logo" class="logo">
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="livestreams.html" class="active"><i class="fas fa-satellite-dish"></i> Live streams</a></li>
+        <li><a href="#transcoder"><i class="fas fa-cogs"></i> Transcoder</a></li>
+        <!-- Add other menu items with icons here -->
+        <li><a href="#settings"><i class="fas fa-sliders-h"></i> Settings</a></li>
+        <li><a href="#billing"><i class="fas fa-credit-card"></i> Billing</a></li>
+      </ul>
+    </nav>
+    <div class="nav-footer">
+      <ul>
+        <li><a href="#help"><i class="fas fa-question-circle"></i> Help</a></li>
+        <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Container for the dropdown, make sure it's full width if necessary -->
+  <!-- <div class="dropdown">
+    <button class="dropbtn">
+      Sort by Oldest
+    <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Oldest</a>
+      <a href="#">Newest</a>
+      <a href="#">Most Viewed</a>
+     
+    </div>
+</div> -->
+
+
+  <div class="create-new-container">
+    <button class="create-new-button" type="button" onclick="openOffcanvas()">
+      <i class="fas fa-plus"></i>
+      <span>Create New</span>
+    </button>
+  </div>
+
+  <!--  Create Streamkey side bar  -->
+  <div id="offcanvasAddStream" class="offcanvas">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Create Stream Key</h5>
+      <button type="button" class="offcanvas-close" onclick="closeOffcanvas()">×</button>
+    </div>
+    <div class="offcanvas-body">
+      <form id="streamKeyForm">
+        <div class="form-group">
+          <label for="streamKeyName">Stream Key Name:</label>
+          <input type="text" id="streamKeyName" name="streamKeyName" placeholder="Enter stream key name" required>
+        </div>
+        <div class="form-group">
+          <label for="streamKeyTitle">Stream Key Title:</label>
+          <input type="text" id="streamKeyTitle" name="streamKeyTitle" placeholder="Enter stream key Title" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="submit-btn">Create Key</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container-grid">
+    <div class="card">
+      <div class="meta-info"><!----><span class="badge text-500 badge-status z-index badge-dark-3">
+          Offline </span><!----></div>
+      <!-- <div class="thumb">
+        <div id="thumb-container" class="video-thumb">
+          <div class="placeholder">
+            <span class="thumb__message">
+              <p class="disabled__msg"> Disabled Stream </p><small class="enable_msg">Please enable</small>
+            </span>
+          </div>
+        </div>
+      </div> -->
+      <div class="video-grid">
+        <video src="http://ipcloud.live:8080/onetv/onemovies.m3u8" controls></video>
+      </div>
+      <div class="status-grid">
+        <p style="color: aliceblue;font-weight: 500;font-size: 18px;">Hello</p>
+        <i class="fas fa-info-circle" style="color: whitesmoke;;margin-left: 5%;"></i>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="meta-info"><!----><span class="badge text-500 badge-status z-index badge-dark-3">
+          Offline </span><!----></div>
+      <!-- <div class="thumb">
+        <div id="thumb-container" class="video-thumb">
+          <div class="placeholder">
+            <span class="thumb__message">
+              <p class="disabled__msg"> Disabled Stream </p><small class="enable_msg">Please enable</small>
+            </span>
+          </div>
+        </div>
+      </div> -->
+      <div class="video-grid">
+        <video src="http://ipcloud.live:8080/onetv/onemovies.m3u8" controls></video>
+      </div>
+      <div class="status-grid">
+        <p style="color: aliceblue;font-weight: 500;font-size: 18px;">Hello</p>
+        <i class="fas fa-info-circle" style="color: whitesmoke;;margin-left: 5%;"></i>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="meta-info"><!----><span class="badge text-500 badge-status z-index badge-dark-3">
+          Offline </span><!----></div>
+      <!-- <div class="thumb">
+        <div id="thumb-container" class="video-thumb">
+          <div class="placeholder">
+            <span class="thumb__message">
+              <p class="disabled__msg"> Disabled Stream </p><small class="enable_msg">Please enable</small>
+            </span>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="video-grid">
+        <video src="http://ipcloud.live:8080/onetv/onemovies.m3u8" controls></video>
+      </div>
+      <div class="status-grid">
+        <p style="color: aliceblue;font-weight: 500;font-size: 18px;">Hello</p>
+        <i class="fas fa-info-circle" style="color: whitesmoke;;margin-left: 5%;"></i>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="meta-info"><!----><span class="badge text-500 badge-status z-index badge-dark-3">
+          Offline </span><!----></div>
+      <!-- <div class="thumb">
+        <div id="thumb-container" class="video-thumb">
+          <div class="placeholder">
+            <span class="thumb__message">
+              <p class="disabled__msg"> Disabled Stream </p><small class="enable_msg">Please enable</small>
+            </span>
+          </div>
+        </div>
+      </div> -->
+      <div class="video-grid">
+        <video src="http://ipcloud.live:8080/onetv/onemovies.m3u8" controls></video>
+      </div>
+      <div class="status-grid">
+        <p style="color: aliceblue;font-weight: 500;font-size: 18px;">Hello</p>
+        <span data-toggle="tooltip" title="" class="label label-success" data-original-title="Active User">
+          <i class="fas fa-info-circle" style="color: whitesmoke;;margin-left: 5%;"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- START OF GRID -->
+  <!-- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); grid-gap: 20px;">
+
+
+  <div style="background-color: whitesmoke; padding: 15px;">
+    <h3 style="border-bottom: 1px solid; margin: 0 0 8px 0; font-size: 18px; font-weight: 600;">Pine Siskin</h3>
+    <div style="position: relative; width: 100%; padding-top: 56.25%;">
+      <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/DvKm5NjGXzM?rel=0" title="Pine Siskin" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <p style="margin: 12px 0 0 0;"><strong>Summary:</strong> Learn about the Pine Siskin, nature’s smallest and most social finch. You may see them arrive at your backyard bird feeders in droves in the early spring.</p>
+  </div>
+</body>
+</html> -->

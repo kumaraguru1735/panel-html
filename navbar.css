@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2C2C54; /* Dark background color */
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #151526; /* Sidebar background color */
+    color: #ffffff;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo-container {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #10101E; /* Logo section background color */
+    text-align: center;
+  }
+  
+  .logo-container img {
+    max-width: 100%; /* Make sure the image is responsive */
+    height: auto;
+  }
+  
+  .nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allow the menu to fill the space */
+  }
+  
+  .nav-menu li a {
+    color: #A7B1C9; /* Text color for menu items */
+    text-decoration: none;
+    padding: 15px 20px; /* Padding inside menu items */
+    display: block;
+    border-left: 4px solid transparent; /* Prepare a space for the active indicator */
+  }
+  
+  .nav-menu li a.active, /* Highlight the active section */
+  .nav-menu li a:hover { /* and on hover */
+    background-color: #1F1F38; /* Background color for active/hover state */
+    border-left-color: #4B6AFC; /* Color for the active indicator */
+    color: white;
+  }
+  
+  .nav-footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    border-top: 1px solid #2C2C46; /* Separator line */
+  }
+  
+  .nav-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-footer li a {
+    color: #A7B1C9; /* Text color for footer items */
+    text-decoration: none;
+    padding: 15px 20px; /* Padding inside footer items */
+    display: block;
+  }
+  
+  .nav-footer li a:hover {
+    color: white;
+  }
+  
+  /* Add styles for the sidebar toggle button */
+.sidebar-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100; /* Make sure it's above other content */
+  }
+  
+  .sidebar-toggle button {
+    background: #4B6AFC;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+  
+  /* Make the sidebar full width on smaller screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .sidebar-toggle {
+      display: block; /* Show the toggle button on small screens */
+    }
+  
+    /* When the sidebar is toggled off, translate it to the left */
+    .sidebar.offscreen {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Style the sidebar when it's displayed on small screens */
+  @media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+      }
+    
+      .sidebar.active {
+        transform: translateX(0);
+      }
+    
+      .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px; /* Changed from left to right */
+        z-index: 100;
+      }
+  }
+  
+
+  #sidebarToggle.close {
+    position: fixed;
+    right: 10px; /* Ensure it's on the right */
+    top: 10px;
+  }
+  

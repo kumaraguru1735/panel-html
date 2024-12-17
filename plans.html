@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Plans</title>
+<style>
+  body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+
+  .toggle {
+    margin: 20px auto;
+    display: block;
+    width: 60px;
+    height: 25px;
+    background-color: #4e4e4e;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  .toggle.active::after {
+    left: 37px;
+  }
+
+  .pricing-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-left: 250px;
+  }
+
+  .plan {
+  position: relative; /* Add this line to your .plan class */
+  background-color: #252525;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  margin: 0 10px;
+}
+  .plan:hover {
+    transform: scale(1.05);
+  }
+
+  .plan img {
+    max-width: 100px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .plan h2 {
+    color: #fff;
+  }
+
+  .plan-price {
+    color: #4eb8f5;
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  .plan-features {
+    text-align: left;
+  }
+
+  .plan-features li {
+    list-style: none;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .plan-button {
+    background-color: #4eb8f5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .plan-button.current {
+    background-color: #27ae60;
+  }
+
+  .badge {
+    background-color: #f1c40f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+  }
+
+  .badge.popular {
+    background-color: #e67e22;
+  }
+
+  .pricing-header {
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+  }
+
+  .pricing-header h1 {
+    margin: 0;
+    font-size: 2.5em; /* 40px */
+    font-weight: normal;
+  }
+
+  .pricing-header p {
+    margin: 10px 0 20px;
+    font-size: 1em; /* 16px */
+  }
+
+  .toggle-container {
+    display: inline-block;
+    position: relative;
+    background-color: #2c3e50;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+
+  .toggle-option {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .toggle-option.active {
+    background-color: #4eb8f5;
+    color: #fff;
+  }
+
+  .save-notice {
+    display: inline-block;
+    background-color: #f39c12;
+    color: white;
+    font-size: 0.8em; /* 13px */
+    padding: 5px 10px;
+    margin-left: 15px;
+    border-radius: 10px;
+    position: relative;
+    top: -4px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+    <div class="pricing-header">
+        <h1>Pricing Plans</h1>
+        <p>Get started with us - it's perfect for individuals and teams. Choose a subscription plan that meets your needs.</p>
+        <div class="toggle-container">
+          <div class="toggle-option active">Monthly</div>
+          <div class="toggle-option">Annual</div>
+        </div>
+        <span class="save-notice">Save up to 10%</span>
+      </div>
+      
+      <script>
+        // Simple JavaScript for toggle functionality
+        document.querySelectorAll('.toggle-option').forEach(function(element) {
+          element.onclick = function() {
+            document.querySelectorAll('.toggle-option').forEach(function(child) {
+              child.classList.remove('active');
+            });
+            element.classList.add('active');
+          };
+        });
+      </script>
+<div class="pricing-container">
+  <!-- Basic Plan -->
+  <div class="plan">
+    <img src="placeholder-piggy.png" alt="Basic Plan Icon">
+    <h2>Basic</h2>
+    <p class="plan-price">$0/month</p>
+    <ul class="plan-features">
+      <li>100 responses a month</li>
+      <li>Unlimited forms and surveys</li>
+      <li>Unlimited fields</li>
+      <li>Basic form creation tools</li>
+      <li>Up to 2 subdomains</li>
+    </ul>
+    <button class="plan-button current">Your Current Plan</button>
+  </div>
+
+  <!-- Pro Plan -->
+  <div class="plan">
+    <div class="badge popular">Popular</div>
+    <img src="placeholder-wallet.png" alt="Pro Plan Icon">
+    <h2>Pro</h2>
+    <p class="plan-price">$7/month</p>
+    <ul class="plan-features">
+      <li>Up to 5 users</li>
+      <li>120+ components</li>
+      <li>Basic support on Github</li>
+      <li>Monthly updates</li>
+      <li>Integrations</li>
+    </ul>
+    <button class="plan-button">Upgrade</button>
+  </div>
+
+  <!-- Enterprise Plan -->
+  <div class="plan">
+    <img src="placeholder-rocket.png" alt="Enterprise Plan Icon">
+    <h2>Enterprise</h2>
+    <p class="plan-price">$16/month</p>
+    <ul class="plan-features">
+      <li>Up to 10 users</li>
+      <li>150+ components</li>
+      <li>Basic support on Github</li>
+      <li>Monthly updates</li>
+      <li>Speedy build tooling</li>
+    </ul>
+    <button class="plan-button">Upgrade</button>
+  </div>
+</div>
+
+<script>
+  // JavaScript for toggle button
+  document.querySelector('.toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
